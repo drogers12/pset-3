@@ -28,9 +28,9 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        ps.sign();          // executes Exercise 1
-        ps.parity();        // executes Exercise 2
-        ps.ordered();       // executes Exercise 3
+        //ps.sign();          // executes Exercise 1
+        //ps.parity();        // executes Exercise 2
+        //ps.ordered();       // executes Exercise 3
         ps.gpa();           // executes Exercise 4
         ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
@@ -49,9 +49,16 @@ public class ProblemSet3 {
      */
 
     public void sign() {
-      Scanner in = new Scanner(System.in);
-      in.close();
-
+      System.out.print("\nEnter an integer: ");
+      int userInteger = in.nextInt();
+      if(userInteger > 0){
+        System.out.println("\nPositive.");
+      }
+      else if(userInteger < 0){
+        System.out.println("\nNegative.");
+      } else {
+        System.out.println("\nZero.");
+      }
     }
 
     /*
@@ -61,7 +68,13 @@ public class ProblemSet3 {
      */
 
     public void parity() {
-
+      System.out.print("\nEnter an integer: ");
+      int userInteger = in.nextInt();
+      if(userInteger % 2 == 0){
+        System.out.println("\nEven.");
+      } else {
+        System.out.println("\nOdd.");
+      }
     }
 
     /*
@@ -71,6 +84,30 @@ public class ProblemSet3 {
      */
 
     public void ordered() {
+      System.out.println("\nEnter three integers.");
+
+      System.out.print("\nEnter integer: ");
+      int integerOne = in.nextInt();
+      System.out.print("Enter integer: ");
+      int integerTwo = in.nextInt();
+      System.out.print("Enter integer: ");
+      int integerThree = in.nextInt();
+
+      if (integerOne < integerTwo && integerTwo < integerThree){
+        System.out.println("\nStrictly increasing.");
+      } else if (integerOne <= integerTwo && integerTwo <= integerThree && (integerOne != integerTwo || integerTwo !=integerThree)){
+        System.out.println("\nIncreasing.");
+      } else if (integerOne == integerTwo && integerTwo == integerThree){
+        System.out.println("\nSame.");
+      } else if (integerOne > integerTwo && integerTwo > integerThree){
+        System.out.println("\nStrictly decreasing.");
+      } else if (integerOne >= integerTwo && integerTwo >= integerThree && (integerOne != integerTwo || integerTwo !=integerThree)){
+        System.out.println("\nDecreasing.");
+      } else {
+        System.out.println("\nUnordered.");
+      }
+
+
 
     }
 
@@ -81,6 +118,13 @@ public class ProblemSet3 {
      */
 
     public void gpa() {
+
+      System.out.print("\nEnter a letter grade: ");
+      String grade = in.nextLine();
+      if (grade == A+){
+        System.out.println("\n4.0");
+      }
+
 
     }
 
