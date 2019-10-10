@@ -28,11 +28,11 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        //ps.sign();          // executes Exercise 1
-        //ps.parity();        // executes Exercise 2
-        //ps.ordered();       // executes Exercise 3
-        ps.gpa();           // executes Exercise 4
-        ps.grade();         // executes Exercise 5
+        //ps.sign();          // executes Exercise 1    Done
+        //ps.parity();        // executes Exercise 2    Done
+        //ps.ordered();       // executes Exercise 3    Done
+        //ps.gpa();           // executes Exercise 4
+        //ps.grade();         // executes Exercise 5    Done
         ps.cards();         // executes Exercise 6
         ps.leapYear();      // executes Exercise 7
         ps.state();         // executes Exercise 8
@@ -113,7 +113,7 @@ public class ProblemSet3 {
 
     /*
      * Exercise 4.
-     *
+     *can
      * Prompt the user to enter a letter grade. What's the corresponding GPA?
      */
 
@@ -121,8 +121,9 @@ public class ProblemSet3 {
 
       System.out.print("\nEnter a letter grade: ");
       String grade = in.nextLine();
-      if (grade == A+){
-        System.out.println("\n4.0");
+      if (grade.equals("A%")){
+        System.out.println("\n4");
+        // if ()
       }
 
 
@@ -136,6 +137,35 @@ public class ProblemSet3 {
 
     public void grade() {
 
+      int perfect = 100;
+      int gradeA = 90;
+      int gradeB = 80;
+      int gradeC = 70;
+      int gradeD = 60;
+      int failure = 0;
+
+      System.out.print("\nEnter a grade: ");
+      double grade = in.nextDouble();
+      if (grade < failure){
+        System.out.println("Grades below 0 are invalid.");
+      } else if (grade > perfect) {
+        System.out.println("Grades above 100 are invalid.");
+      }
+      if (grade <= perfect && grade >= gradeA){
+        System.out.println("You received an A.");
+      }
+      if (grade < gradeA && grade >= gradeB){
+        System.out.println("You received a B.");
+      }
+      if (grade < gradeB && grade >= gradeC){
+        System.out.println("You received a C.");
+      }
+      if (grade < gradeC && grade >= gradeD){
+        System.out.println("You received a D.");
+      }
+      if (grade < gradeD && grade >= failure){
+        System.out.println("You received an F.");
+      }
     }
 
     /*
