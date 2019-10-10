@@ -177,7 +177,7 @@ public class ProblemSet3 {
     public void cards() {
 
       System.out.print("\nEnter a card: ");
-        String card = in.next();
+        String card = in.nextLine();
         String rank = card.substring(0, 1);
         String suit = card.substring(1);
         boolean realValue = false;
@@ -185,108 +185,91 @@ public class ProblemSet3 {
         String printSuit = "";
 
         switch (rank) {
-            case "2":
-                printRank = "Two";
-                realValue = true;
-                break;
-
-            case "3":
-                printRank = "Three";
-                realValue = true;
-                break;
-
-            case "4":
-                printRank = "Four";
-                realValue = true;
-                break;
-
-            case "5":
-                printRank = "Five";
-                realValue = true;
-                break;
-
-            case "6":
-                printRank = "Six";
-                realValue = true;
-                break;
-
-            case "7":
-                printRank = "Seven";
-                realValue = true;
-                break;
-
-            case "8":
-                printRank = "Eight";
-                realValue = true;
-                break;
-
-            case "9":
-                printRank = "Nine";
-                realValue = true;
-                break;
-
-            case "T":
-                printRank = "Ten";
-                realValue = true;
-                break;
-
-            case "J":
-                printRank = "Jack";
-                realValue = true;
-                break;
-
-            case "Q":
-                printRank = "Queen";
-                realValue = true;
-                break;
-
-            case "K":
-                printRank = "King";
-                realValue = true;
-                break;
-
-            case "A":
-                printRank = "Ace";
-                realValue = true;
-                break;
-
-            default:
-                System.out.println("That's not a valid rank.");
-                realValue = false;
-                break;
+          case "2":
+              printRank = "Two";
+              realValue = true;
+              break;
+          case "3":
+              printRank = "Three";
+              realValue = true;
+              break;
+          case "4":
+              printRank = "Four";
+              realValue = true;
+              break;
+          case "5":
+              printRank = "Five";
+              realValue = true;
+              break;
+          case "6":
+              printRank = "Six";
+              realValue = true;
+              break;
+          case "7":
+              printRank = "Seven";
+              realValue = true;
+              break;
+          case "8":
+              printRank = "Eight";
+              realValue = true;
+              break;
+          case "9":
+              printRank = "Nine";
+              realValue = true;
+              break;
+          case "T":
+              printRank = "Ten";
+              realValue = true;
+              break;
+          case "J":
+              printRank = "Jack";
+              realValue = true;
+              break;
+          case "Q":
+              printRank = "Queen";
+              realValue = true;
+              break;
+          case "K":
+              printRank = "King";
+              realValue = true;
+              break;
+          case "A":
+              printRank = "Ace";
+              realValue = true;
+              break;
+          default:
+              System.out.println("That's not a valid rank.");
+              realValue = false;
+              break;
         }
 
         if (realValue) {
-            switch (suit) {
-                case "C":
-                    printSuit = "Clubs";
-                    realValue = true;
-                    break;
-
-                case "D":
-                    printSuit = "Diamonds";
-                    realValue = true;
-                    break;
-
-                case "H":
-                    printSuit = "Hearts";
-                    realValue = true;
-                    break;
-
-                case "S":
-                    printSuit = "Spades";
-                    realValue = true;
-                    break;
-
-                default:
-                    System.out.println("\nThat's not a valid suit.");
-                    realValue = false;
-                    break;
+          switch (suit) {
+              case "C":
+                  printSuit = "Clubs";
+                  realValue = true;
+                  break;
+              case "D":
+                  printSuit = "Diamonds";
+                  realValue = true;
+                  break;
+              case "H":
+                  printSuit = "Hearts";
+                  realValue = true;
+                  break;
+              case "S":
+                  printSuit = "Spades";
+                  realValue = true;
+                  break;
+              default:
+                  System.out.println("\nThat's not a valid suit.");
+                  realValue = false;
+                  break;
             }
         }
 
         if (realValue) {
-            System.out.println("\n" + printRank + " of " + printSuit + ".");
+          System.out.println("\n" + printRank + " of " + printSuit + ".");
         }
 
     }
