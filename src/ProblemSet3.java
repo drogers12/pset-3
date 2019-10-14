@@ -28,16 +28,16 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        //ps.sign();          // executes Exercise 1    Done
-        //ps.parity();        // executes Exercise 2    Done
-        //ps.ordered();       // executes Exercise 3    Done
-        //ps.gpa();           // executes Exercise 4    Done
-        //ps.grade();         // executes Exercise 5    Done
-        //ps.cards();         // executes Exercise 6    Done
-        //ps.leapYear();      // executes Exercise 7
-        //ps.state();         // executes Exercise 8
-        ps.months();        // executes Exercise 9
-        ps.salary();        // executes Exercise 10
+        ps.sign();          // executes Exercise 1    Done
+        ps.parity();        // executes Exercise 2    Done
+        ps.ordered();       // executes Exercise 3    Done
+        ps.gpa();           // executes Exercise 4    Done
+        ps.grade();         // executes Exercise 5    Done
+        ps.cards();         // executes Exercise 6    Done
+        ps.leapYear();      // executes Exercise 7    Done
+        ps.state();         // executes Exercise 8    Done
+        ps.months();        // executes Exercise 9    Done
+        ps.salary();        // executes Exercise 10   Done
 
         in.close();
     }
@@ -177,11 +177,13 @@ public class ProblemSet3 {
                 default:
                     break;
             }
-
         }
+        if (gpaVar == 4.33){
+          System.out.printf("\nYour GPA is 4.00.\n");
+        }else{
         System.out.printf("\nYour GPA is %.2f.\n", gpaVar);
     }
-
+}
     /*
      * Exercise 5.
      *
@@ -200,24 +202,24 @@ public class ProblemSet3 {
       System.out.print("\nEnter a grade: ");
       double grade = in.nextDouble();
       if (grade < failure){
-        System.out.println("Grades below 0 are invalid.");
+        System.out.println("\nGrades below 0 are invalid.");
       } else if (grade > perfect) {
-        System.out.println("Grades above 100 are invalid.");
+        System.out.println("\nGrades above 100 are invalid.");
       }
       if (grade <= perfect && grade >= gradeA){
-        System.out.println("You received an A.");
+        System.out.println("\nYou received an A.");
       }
       if (grade < gradeA && grade >= gradeB){
-        System.out.println("You received a B.");
+        System.out.println("\nYou received a B.");
       }
       if (grade < gradeB && grade >= gradeC){
-        System.out.println("You received a C.");
+        System.out.println("\nYou received a C.");
       }
       if (grade < gradeC && grade >= gradeD){
-        System.out.println("You received a D.");
+        System.out.println("\nYou received a D.");
       }
       if (grade < gradeD && grade >= failure){
-        System.out.println("You received an F.");
+        System.out.println("\nYou received an F.");
       }
     }
 
@@ -230,7 +232,7 @@ public class ProblemSet3 {
     public void cards() {
 
       System.out.print("\nEnter a card: ");
-        String card = in.nextLine();
+        String card = in.next();
         String rank = card.substring(0, 1);
         String suit = card.substring(1);
         boolean realValue = false;
@@ -362,7 +364,7 @@ public class ProblemSet3 {
         final double BOILING_POINT_CELSIUS = 100;
         final double BOILING_POINT_FAHRENHEIT = 212;
 
-        System.out.print("\nEnter a temperature: ");
+        System.out.print("\n\nEnter a temperature: ");
         double temperature = in.nextDouble();
         System.out.print("Enter a scale: ");
         String scale = (in.next()).toUpperCase();
@@ -378,6 +380,7 @@ public class ProblemSet3 {
                     System.out.println("\nSolid.");
                 }
                 break;
+
             case "F":
                 if (temperature >= BOILING_POINT_FAHRENHEIT) {
                     System.out.println("\nGas.");
@@ -402,6 +405,124 @@ public class ProblemSet3 {
 
     public void months() {
 
+        System.out.print("\nEnter a month: ");
+        String month = (in.next()).toUpperCase();
+
+        if (month.length() == 3) {
+            switch (month) {
+                case "JAN":
+                    System.out.println("\n31 days.");
+                    break;
+                case "FEB":
+                    System.out.println("\n28 or 29 days.");
+                    break;
+                case "MAR":
+                    System.out.println("\n31 days.");
+                    break;
+                case "APR":
+                    System.out.println("\n30 days.");
+                    break;
+                case "MAY":
+                    System.out.println("\n31 days.");
+                    break;
+                case "JUN":
+                    System.out.println("\n30 days.");
+                    break;
+                case "JUL":
+                    System.out.println("\n31 days.");
+                    break;
+                case "AUG":
+                    System.out.println("\n31 days.");
+                    break;
+                case "SEP":
+                    System.out.println("\n30 days.");
+                    break;
+                case "OCT":
+                    System.out.println("\n31 days.");
+                    break;
+                case "NOV":
+                    System.out.println("\n30 days.");
+                    break;
+                case "DEC":
+                    System.out.println("\n31 days.");
+                    break;
+                default:
+                    System.out.println("\nThat's not a valid month.");
+                    break;
+            }
+        } else if (month.length() == 4) {
+            switch (month) {
+                case "JANU":
+                    System.out.println("\n31 days.");
+                    break;
+                case "FEBR":
+                    System.out.println("\n28 or 29 days.");
+                    break;
+                case "MARC":
+                    System.out.println("\n31 days.");
+                    break;
+                case "APRI":
+                    System.out.println("\n30 days.");
+                    break;
+                case "JUNE":
+                    System.out.println("\n30 days.");
+                    break;
+                case "JULY":
+                    System.out.println("\n31 days.");
+                    break;
+                case "AUGUST":
+                    System.out.println("\n31 days.");
+                    break;
+                case "SEPT":
+                    System.out.println("\n30 days.");
+                    break;
+                case "OCTO":
+                    System.out.println("\n31 days.");
+                    break;
+                case "NOVE":
+                    System.out.println("\n30 days.");
+                    break;
+                case "DECE":
+                    System.out.println("\n31 days.");
+                    break;
+                default:
+                    System.out.println("\nThat's not a valid month.");
+                    break;
+            }
+        } else {
+            switch (month) {
+                case "JANUARY":
+                    System.out.println("\n31 days.");
+                    break;
+                case "FEBRUARY":
+                    System.out.println("\n28 or 29 days.");
+                    break;
+                case "MARCH":
+                    System.out.println("\n31 days.");
+                    break;
+                case "APRIL":
+                    System.out.println("\n30 days.");
+                    break;
+                case "AUGUST":
+                    System.out.println("\n31 days.");
+                    break;
+                case "SEPTEMBER":
+                    System.out.println("\n30 days.");
+                    break;
+                case "OCTOBER":
+                    System.out.println("\n31 days.");
+                    break;
+                case "NOVEMBER":
+                    System.out.println("\n30 days.");
+                    break;
+                case "DECEMBER":
+                    System.out.println("\n31 days.");
+                    break;
+                default:
+                    System.out.println("\nThat's not a valid month.");
+                    break;
+            }
+        }
     }
 
     /*
@@ -412,5 +533,30 @@ public class ProblemSet3 {
 
     public void salary() {
 
+
+        final double OVERTIME_THRESHOLD = 40;
+        final double OVERTIME_PAY_MULTIPLIER = 1.5;
+
+        System.out.print("\nWage: ");
+        double wage = in.nextDouble();
+        if (wage < 0.00) {
+            System.out.println("Your wage must be greater than or equal to $0.00/hour.");
+        }
+        System.out.print("Hours: ");
+        double hours = in.nextDouble();
+        if (hours < 0.0) {
+            System.out.println("Your hours must be greater than or equal to 0.0.");
+        }
+        double pay;
+        double overtimeHours;
+
+        if (hours > OVERTIME_THRESHOLD) {
+            overtimeHours = hours - OVERTIME_THRESHOLD;
+            pay = 40 * wage + overtimeHours * OVERTIME_PAY_MULTIPLIER * wage;
+            System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+        } else {
+            pay = hours * wage;
+            System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+        }
     }
 }
