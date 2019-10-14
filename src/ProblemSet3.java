@@ -31,9 +31,9 @@ public class ProblemSet3 {
         //ps.sign();          // executes Exercise 1    Done
         //ps.parity();        // executes Exercise 2    Done
         //ps.ordered();       // executes Exercise 3    Done
-        //ps.gpa();           // executes Exercise 4
+        //ps.gpa();           // executes Exercise 4    Done
         //ps.grade();         // executes Exercise 5    Done
-        ps.cards();         // executes Exercise 6
+        //ps.cards();         // executes Exercise 6    Done
         //ps.leapYear();      // executes Exercise 7
         //ps.state();         // executes Exercise 8
         ps.months();        // executes Exercise 9
@@ -119,14 +119,67 @@ public class ProblemSet3 {
 
     public void gpa() {
 
-      System.out.print("\nEnter a letter grade: ");
-      String grade = in.nextLine();
-      if (grade.equals("A%")){
-        System.out.println("\n4");
-        // if ()
-      }
+        final double VALUE_A = 4.00;
+        final double VALUE_B = 3.00;
+        final double VALUE_C = 2.00;
+        final double VALUE_D = 1.00;
+        final double VALUE_F = 0.00;
+
+        final double VALUE_PLUS = 0.33;
+        final double VALUE_MINUS = -0.33;
 
 
+        System.out.print("\nEnter a letter grade: ");
+        String input = in.next();
+        String letter = (String.valueOf(input.charAt(0))).toUpperCase();
+        String additive = "Arbitrary Value";
+        try {
+            additive = String.valueOf(input.charAt(1));
+        } catch (Exception e) {
+            //Nothing
+        }
+        double gpaVar = 0;
+        switch (letter) {
+            case "A":
+                gpaVar += VALUE_A;
+                break;
+            case "B":
+                gpaVar += VALUE_B;
+                break;
+            case "C":
+                gpaVar += VALUE_C;
+                break;
+            case "D":
+                gpaVar += VALUE_D;
+                break;
+            case "F":
+                gpaVar += VALUE_F;
+                break;
+            default:
+                System.out.println("\nThat's not a valid letter grade.");
+                break;
+        }
+
+        if (letter == "F") {
+                      //Supposed to be empty. Not doing anything.
+        } else if (letter == "A") {
+            if (additive == "-") {
+                gpaVar += VALUE_MINUS;
+            }
+        } else {
+            switch (additive) {
+                case "+":
+                    gpaVar += VALUE_PLUS;
+                    break;
+                case "-":
+                    gpaVar += VALUE_MINUS;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        System.out.printf("\nYour GPA is %.2f.\n", gpaVar);
     }
 
     /*
@@ -282,8 +335,17 @@ public class ProblemSet3 {
 
     public void leapYear() {
 
+      System.out.print("\nEnter a year: ");
+        long yearInput = in.nextLong();
 
 
+        if (yearInput >= 0){
+            if ((yearInput % 4 == 0) && ((yearInput % 100 != 0) || (yearInput % 400 == 0))) {
+                System.out.printf("\n%d is a leap year.", yearInput);
+            } else {
+                System.out.printf("\n%d is not a leap year.", yearInput);
+            }
+        }
     }
 
     /*
@@ -295,9 +357,41 @@ public class ProblemSet3 {
 
     public void state() {
 
+        final double FREEZING_POINT_CELSIUS = 0;
+        final double FREEZING_POINT_FAHRENHEIT = 32;
+        final double BOILING_POINT_CELSIUS = 100;
+        final double BOILING_POINT_FAHRENHEIT = 212;
 
+        System.out.print("\nEnter a temperature: ");
+        double temperature = in.nextDouble();
+        System.out.print("Enter a scale: ");
+        String scale = (in.next()).toUpperCase();
 
-
+        switch (scale) {
+            case "C":
+                if (temperature >= BOILING_POINT_CELSIUS) {
+                    System.out.println("\nGas.");
+                } else if (FREEZING_POINT_CELSIUS < temperature &&
+                  temperature < BOILING_POINT_CELSIUS) {
+                    System.out.println("\nLiquid.");
+                } else {
+                    System.out.println("\nSolid.");
+                }
+                break;
+            case "F":
+                if (temperature >= BOILING_POINT_FAHRENHEIT) {
+                    System.out.println("\nGas.");
+                } else if (FREEZING_POINT_FAHRENHEIT < temperature &&
+                  temperature < BOILING_POINT_FAHRENHEIT) {
+                    System.out.println("\nLiquid.");
+                } else {
+                    System.out.println("\nSolid.");
+                }
+                break;
+            default:
+                System.out.println("\nThat's not a valid scale.");
+                break;
+        }
     }
 
     /*
